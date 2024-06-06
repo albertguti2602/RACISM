@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, #00825a 0%, #ffffff 35%, #00825a 100%);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+}
+
+.content {
+    max-width: 100%;
+    display: inline-block;
+    text-align: left;
+}
+
+img {
+    margin-top: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 100%; /* Limitar el ancho de las respuestas al ancho de la imagen */
+}
+
+ul li {
+    background-color: #eee;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre un elemento <li> */
+    transition: background-color 0.3s ease; /* Agrega transición suave para el cambio de color */
+}
+
+ul li:hover {
+    background-color: #ddd; /* Cambia el color de fondo a un tono más grisáceo cuando se pasa el cursor */
+}
+
+#refreshButton {
+    margin-top: 20px;
+}
