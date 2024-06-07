@@ -5,17 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Challenge The World!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="../css/game.css">
 </head>
 
 <body>
+    <div class="back-button">
+        <img src="../img/back.png" alt="Back" id="backButton">
+    </div>
     <div class="container">
         <h1>Challenge The World!</h1>
         <div class="content">
-            <img id="image" src="" alt="Imagen">
-            <p id="frase"></p>
+            <div class="question">
+                <p id="frase"></p>
+                <img id="image" src="" alt="Imagen">
+            </div>
             <ul id="respuestas"></ul>
-            <p id="reflexion" style="display: none;"></p>
+            <p id="reflexion" style="display: none;" class="reflection"></p>
             <button id="refreshButton" style="display: none;">Next</button>
         </div>
     </div>

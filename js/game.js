@@ -7,7 +7,7 @@ async function fetchApiData() {
         const data = await response.json();
         
         document.getElementById('image').src = data.Imagen;
-        document.getElementById('frase').textContent = data.frase;
+        document.getElementById('frase').innerHTML = formatText(data.frase, 10);
         
         const respuestasList = document.getElementById('respuestas');
         respuestasList.innerHTML = '';
@@ -24,7 +24,6 @@ async function fetchApiData() {
                     document.querySelectorAll('#respuestas li').forEach(respuesta => {
                         respuesta.style.pointerEvents = 'none';
                     });
-                    playCorrectSound();
                 } else {
                     li.style.backgroundColor = 'red';
                 }
@@ -33,10 +32,10 @@ async function fetchApiData() {
         });
 
         const reflexionElement = document.getElementById('reflexion');
-        reflexionElement.innerHTML = formatReflexion(data.Reflexion);
+        reflexionElement.innerHTML = formatText(data.Reflexion, 13);
 
     } catch (error) {
-        document.getElementById('frase').textContent = `Error: ${error.message}`;
+        document.getElementById('frase').innerHTML = `Error: ${formatText(error.message, 10)}`;
     }
 }
 
@@ -48,9 +47,8 @@ function shuffleArray(array) {
     return array;
 }
 
-function formatReflexion(reflexion) {
-    const words = reflexion.split(' ');
-    const maxWordsPerLine = 13;
+function formatText(text, maxWordsPerLine) {
+    const words = text.split(' ');
     let formattedText = '';
 
     for (let i = 0; i < words.length; i += maxWordsPerLine) {
@@ -81,4 +79,8 @@ document.getElementById('refreshButton').addEventListener('click', () => {
         respuesta.style.pointerEvents = 'auto';
         respuesta.style.backgroundColor = '';
     });
+});
+
+document.getElementById('backButton').addEventListener('click', () => {
+    window.location.href = '../index.html';
 });
