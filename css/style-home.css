@@ -19,6 +19,13 @@ body {
     background: linear-gradient(rgb(36, 158, 48)), transparent);
 }
 
+.intro {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4vh;
+}
+
 .column-1 {
     width: 100%;
 }
